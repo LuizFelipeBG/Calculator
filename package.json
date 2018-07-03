@@ -12,5 +12,8 @@
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "jest": "^23.2.0"
   }
 }
