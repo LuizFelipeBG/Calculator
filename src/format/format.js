@@ -1,5 +1,4 @@
 const format = (string) =>{
-  //const removeSpacessides = string.trim()
   const split1 = string.split('+')//['1-2-3','1']
   const trim1 = split1.map(x => x.trim())
   const join1 = trim1.join(' +') //['1-2-3 +1']
