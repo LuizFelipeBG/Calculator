@@ -3,28 +3,28 @@ import './App.css';
 import calculator from './calculator/calculator.js';
 import format from './format/format.js';
 const initialState = {
-  value:''
+  value:'',
+  theResult:'', 
 }
+
 class App extends Component {
   state = {...initialState}
   
   onChangevalue = (event) => {
      this.setState({value: event.target.value});
   }
-  submitOn(event){
-    //De alguma forma o evento das fuçoes devem acontecer aqui dentro
-    alert(this.state.value)  
-    event.preventDefault();
+  handleClick = () => {
+    this.setState({theResult: calculator(format(this.state.value))})
   }
 
   render() {
     return (
-      <form onSubmit={this.submitOn}>
       <div className="App">
-        <input onChange={this.onChangevalue}/>
-        <button type="submit" value="submit" className='calculatorButton' onClick={this.submitOn}>Calcular</button>
+        <input value={this.state.value} onChange={this.onChangevalue}/>
+        <button type="button" className='calculatorButton' onClick={this.handleClick}>Calcular</button>
+        <h3>{this.state.theResult}</h3>
       </div>
-      </form>
+      
     );
   };
 }
