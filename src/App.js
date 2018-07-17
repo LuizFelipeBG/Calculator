@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import calculator from './calculator/calculator.js';
-import format from './format/format.js';
+import result from './result/result';
 const initialState = {
   value:'',
   theResult:'', 
@@ -14,7 +13,7 @@ class App extends Component {
      this.setState({value: event.target.value});
   }
   handleClick = () => {
-    this.setState({theResult: calculator(format(this.state.value))})
+    this.setState({theResult: result(this.state.value) || '0', value:''})
   }
 
   render() {
