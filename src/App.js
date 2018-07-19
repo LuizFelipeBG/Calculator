@@ -19,8 +19,8 @@ class App extends Component {
 
   handleClick = () => {
     const history = [...this.state.history]
-    this.setState({theResult: result(this.state.value)})
-    history.push(format(this.state.value))
+    this.setState({theResult: result(this.state.value) || 0, value:''})
+    history.push(format(this.state.value) + ' = ' + result(this.state.value) || 0)
     this.setState({history: history})
   }
 
@@ -30,7 +30,8 @@ class App extends Component {
         <input value={this.state.value} onChange={this.onChangevalue} className='calculatorInput'/>
         <button type="button" className='calculatorButton' onClick={this.handleClick}>Calcular</button>
         <h3>{this.state.theResult}</h3>
-        <p>history: {this.state.history.join('----------------')}</p>
+        <p className='historyBox'>History: <br/>{this.state.history.join(' --next--> ')}</p>
+       
       </div>
       
     );

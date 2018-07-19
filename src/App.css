@@ -8,3 +8,8 @@
 .calculatorButton{
   font-size: 15px;
 }
+
+.historyBox{
+  margin-left: 2%;
+  width: 30%;
+}
