@@ -11,3 +11,6 @@ test('Transform the string in array [x, -x, x, x]',() => {
 test('Transform the string in array [-x, -x, x, x]',() => {
         expect(format('-1-2-3+1')).toEqual('-1 -2 -3 +1')
 })
+// test('test number/string', () => {
+//     expect(format('9090string')).toEqual(NaN)
+// })

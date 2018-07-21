@@ -9,3 +9,6 @@ test('test compilation function', () => {
 test('test string return NaN', () => {
     expect(result('-1 --2 +3')).toEqual(NaN)
 })
+// test('test number/string', () => {
+//     expect(result('9090string')).toEqual(NaN)
+// })
