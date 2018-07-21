@@ -1,8 +1,11 @@
-import Result from './result'
+import result from './result';
 
 test('test compilation function', () => {
-    expect(Result('1    +2 -3     +1')).toEqual(1)
+    expect(result('1    +2 -3     +1')).toEqual(1)
 })
 test('test compilation function', () => {
-    expect(Result('-1    +2 -3     +1')).toEqual(-1)
+    expect(result('-1    +2 -3     +1')).toEqual(-1)
+})
+test('test string return NaN', () => {
+    expect(result('-1 --2 +3')).toEqual(NaN)
 })

@@ -4,15 +4,15 @@ import result from './result/result';
 import format from './format/format';
 const initialState = {
   value:'',
-  theResult:'', 
+  theResult:'',
   history:[]
 }
 
 
 class App extends Component {
   state = {...initialState}
-  
-  
+
+
   onChangevalue = (event) => {
     this.setState({value: event.target.value});
   }
@@ -20,7 +20,7 @@ class App extends Component {
   handleClick = () => {
     const history = [...this.state.history]
     this.setState({theResult: result(this.state.value) || 0, value:''})
-    history.push(format(this.state.value) + ' = ' + result(this.state.value) || 0)
+    history.push(format(this.state.value) + ' = ' + (result(this.state.value) || 'unspent value'))
     this.setState({history: history})
   }
 
@@ -31,9 +31,9 @@ class App extends Component {
         <button type="button" className='calculatorButton' onClick={this.handleClick}>Calcular</button>
         <h3>{this.state.theResult}</h3>
         <p className='historyBox'>History: <br/>{this.state.history.join(' --next--> ')}</p>
-       
+
       </div>
-      
+
     );
   };
 }
