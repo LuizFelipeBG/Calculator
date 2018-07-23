@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import result from './result/result';
 import format from './format/format';
+import textInputEnd from './format/textInInputEnd';
 const initialState = {
   value:'',
   theResult:'',
@@ -22,6 +23,11 @@ class App extends Component {
       this.setState({theResult: 'unexpected value'})
       return
     }
+    if (textInputEnd(this.state.value) === false){
+      this.setState({theResult: 'unexpected value'})
+      return
+    }
+    
 
     const history = [...this.state.history]
     this.setState({theResult: result(this.state.value) || 0, value:''})
