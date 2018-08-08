@@ -3,6 +3,7 @@ import './App.css';
 import result from './result/result';
 import format from './format/format';
 import textInputEnd from './format/textInInputEnd';
+import historyFormat from './format/historyFormat';
 const initialState = {
   value:'',
   theResult:'',
@@ -31,7 +32,7 @@ class App extends Component {
 
     const history = [...this.state.history]
     this.setState({theResult: result(this.state.value) || 0, value:''})
-    history.push(format(this.state.value) + ' = ' + (result(this.state.value) ))
+    history.push(historyFormat(format(this.state.value)) + ' = ' + (result(this.state.value) ))
     this.setState({history: history})
   }
 
