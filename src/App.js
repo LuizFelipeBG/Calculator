@@ -3,7 +3,7 @@ import './App.css';
 import result from './result/result';
 import format from './format/format';
 import textInputEnd from './format/textInInputEnd';
-import historyFormat from './format/historyFormat';
+import historyFormat from './format/formatDisplay';
 const initialState = {
   value:'',
   theResult:'',
